@@ -1,0 +1,214 @@
+<html>
+    <link rel="stylesheet", href="style.css">
+
+    <body>
+        <h1>Programmer's guide</h1>
+        
+        <h2>Preamble</h2>
+        <h3>In this page it is assumed that you (the reader) have decent knowledge on the operations
+            of the 65C816 and of the communcation routine of the SNES APU.
+        </h3>
+        <p>
+            This page will go into the technical details on how to operate the driver, what it can do
+            and how you can use it for your own games.<br><br>
+            If you are not confident there are further resources for learning the SNES, listed below.
+            <list>
+                <li>
+                    NoCash FULLSNES documentation: <a href="https://problemkaputt.de/fullsnes.htm">https://problemkaputt.de/fullsnes.htm</a>
+                </li>
+                <li>
+                    SNESDEV Wiki: <a href="https://snes.nesdev.org/wiki/SNESdev_Wiki">https://snes.nesdev.org/wiki/SNESdev_Wiki</a>
+                </li>
+                <li>
+                    SFC Development Wiki: <a href="https://wiki.superfamicom.org/">https://wiki.superfamicom.org/</a>
+                </li>
+                <li>
+                    SNESLab: <a href="https://sneslab.net/wiki/Main_Page">https://sneslab.net/wiki/Main_Page/</a>
+                </li>
+                <li>
+                    6502.org: <a href="http://www.6502.org/tutorials/65c816opcodes.html"> http://www.6502.org/tutorials/65c816opcodes.html</a>
+                </li>
+            </list>
+        </p>
+        <h2>Features</h2>
+        <h3>
+            The Cobalt driver can do the following things
+        </h3>
+        <p>
+            <list>
+                <li>Play 8 channels of music</li>
+                <li>Play 3 channels of sequenced sound effects from channel <b>5</b> to <b>8</b></li>
+                <li>Interact with Echo, Pitch modulation and Noise output</li>
+                <li>Use GAIN and ADSR envelopes</li>
+                <li>Supports the following effects</li>
+                <ul>
+                    <li>Portamento</li>
+                    <li>Vibrato</li>
+                    <li>Volume Slides</li>
+                </ul>
+                <li>Load seperate tunes with a speedy loader</li>
+                <li>Hold up to 256 SFX inside a driver file</li>
+            </list>
+        </p>
+        <h2>Handling the driver</h2>
+        <h3>Loading the driver</h3>
+        <p>
+            The loading routine of the driver is the same as the <a href="https://snes.nesdev.org/wiki/S-SMP#IPL_Boot_ROM">IPL loader routine</a>, this handles the loading of the driver data.
+            In the IPL load routine, the starting address of the driver should be at $0200
+            <h4>When the driver is loaded it will immediately launch into the tune loading routine!</h4> 
+            Be prepared for this if you want your music to be loaded properly! This is discussed in more detail in <a href="#load_tune">"Loading a tune"</a>, 
+            but the inital load is done via the IPL loader routine.<br>
+            The driver will contain the following data:
+            <ul>
+                <li>Driver code</li>
+                <li>Directory table</li>
+                <li>Sample data</li>
+                <li>Instrument data</li>
+                <li>SFX data</li>
+            </ul>
+            Each tune will have its own set of data, split into 2 major sections. The <b>Header</b> and the <b>Sequence data.</b> <br>
+            The header is defined as such:<br>
+            <ul>
+                <li>1 byte for the echo delay [echo is disabled if the read value is 0]</li>
+                <li>1 byte for the echo feedback</li>
+                <li>2 bytes for the echo left and right volume</li>
+                <li>8 bytes for the echo coeffecients</li>
+                <li>2 bytes for the initial track speed</li>
+            </ul>
+
+            The Sequence data contains:<br>
+            <ul>
+                <li>Sequence of orders, each containing a 2 byte pointer to the start of the sequence pattern [with 8 channels that is 16 bytes per order entry].</li>
+                <li>Variable length series of sequence commands for the driver to execute.</li>
+            </ul>
+            
+        </p>
+        <h3>Interacting with the driver</h3>
+        <p>
+            To interact with the driver the user will mainly focus on APU-0 and APU-3. APU-0 is where you send and recieve commands, APU-3 is a rolling counter to signal a new command to the APU. The user sends a command to APU-0, next the user checks if APU-3 returns the same value as the current rolling counter. If APU-3 returns the same command the operation has been successful and the main side CPU can continue.
+            <h4>In order for this to work the main side counter should be reset to 0 at the start, since the APU side is set to 0 on startup!</h4>
+        </p>
+        <h4>Code example:</h4>
+        <code>
+PlaySfx:
+    sep #$20            ;Send Play SFX command over
+    lda.b #$02          ;Play SFX
+    sta.w HW_APUI00
+    lda.b #$00          ;SFX index
+    sta.w HW_APUI01
+    lda.b MZP.Counter   ;Wait for SPC side to catch up
+    -
+    cmp.w HW_APUI03     ;Check for APU counter to be equal to the main side counter
+    bne -
+    inc
+    sta.w HW_APUI03
+    sta.b MZP.Counter   ;Send timer over
+    rts
+        </code>
+        <h3 id="load_tune">Loading a song</h3>
+        <p>
+            In order to load a tune in Cobalt comes with a specialised speedy-loader that relies on reading from APU-3 and writing to APU0-3.
+            
+            <br>
+            The main steps are:
+            <ol>
+                <li>Initialise a pointer to the music you want to load</li>
+                <li>Initialise a rolling counter set to $00</li>
+                <li>Send the Tune Load command to APU-0</li>
+                <li>Send the length of the tune data to APU1-2 [The length is 2 bytes wide]</li>
+                <li>Send $FF to APU-3</li>
+                <li>Wait for APU-3 to increment, this signals everything is setup to move</li>
+                <li>Load 4 bytes of music data in APU-0 to APU-3</li>
+                <li>Read APU-3 and loop until the returned value is inqeual to the current rolling counter</li>
+                <li>Subtract 4 from the length counter</li>
+                <li>Continue steps 7 through 10 until the loop counter has been underflowed</li>
+            </ol>
+        </p>
+        <h4>Code example:</h4>
+        <code>
+LoadTune:
+    php
+    phb
+    sep #$20                        ;Grab tune bank
+    lda.b #bank(TuneData)
+    pha
+    plb
+    
+    sep #$20
+    lda.b #$01                      ;Send Load tune command
+    sta.w HW_APUI00
+
+    rep #$10
+    rep #$20
+    lda.w #TuneDataEnd-TuneData     ;Send length of data over to APU
+    sta.l HW_APUI01
+    tay                             ;Set Y to length of data to send
+    ldx.w #$0000
+    sep #$20
+    lda.b #$FF
+    sta.l HW_APUI03                 ;Set driver counter to APU-3
+    lda.b #$00
+    sta.b MZP.R0                    ;Set rolling counter to $00
+    -
+    lda.l HW_APUI03
+    inc
+    bne -                           ;Wait for APU-3 to return a 0 byte, meaning we are ready for transfer
+
+    ;Tune loading loop
+    -
+    rep #$20
+    lda.w TuneData, X               ;Send lo word
+    sta.l HW_APUI00
+    inx
+    inx
+    lda.w TuneData, X               ;Send hi word
+    sta.l HW_APUI02
+    inx
+    inx
+    sep #$20
+    --
+    lda.l HW_APUI03                 ;Wait for APU-3 rolling counter to be inequal, meaning the next dual word is to be read
+    cmp.b MZP.R0
+    beq --
+    sta.b MZP.R0
+    rep #$20
+    tya
+    sec
+    sbc.w #$0004                    ;Subtract index by 4, break out if counter has underflowed
+    tay
+    bcs -
+    ;Exit out of the routine
+    plb
+    plp
+    rts
+        </code>
+        <h3>Command list</h3>
+        <table>
+            <tr>
+                <th class="tableheader">Version introduced</th>
+                <th class="tableheader">Index</th>
+                <th class="tableheader">Name</th>
+                <th class="tableheader">Description</th>
+            </tr>
+            <tr>
+                <th>1.0</th>
+                <th>$00</th>
+                <th>Null</th>
+                <th>Does absolutely nothing</th>
+            </tr>
+            <tr>
+                <th>1.0</th>
+                <th>$01</th>
+                <th>Load tune</th>
+                <th>Initiates the tune load sequence</th>
+            </tr>
+            <tr>
+                <th>1.0</th>
+                <th>$02</th>
+                <th>Play SFX</th>
+                <th>Play a SFX with an index specified in APU1</th>
+            </tr>
+        </table>
+        <p><a href="index.html">Back</a></p2>
+    </body>
+</html>
