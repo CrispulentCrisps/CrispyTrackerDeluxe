@@ -1,58 +1,7 @@
-﻿  main.cpp
-  Tracker.cpp
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Types.h(26,2): warning C4091: 'typedef ': ignored on left of 'MusicHeader' when no variable is declared
-  (compiling source file 'main.cpp')
-  
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Types.h(34,2): warning C4091: 'typedef ': ignored on left of 'SFXHeader' when no variable is declared
-  (compiling source file 'main.cpp')
-  
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Types.h(40,2): warning C4091: 'typedef ': ignored on left of 'FXCol' when no variable is declared
-  (compiling source file 'main.cpp')
-  
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Types.h(48,2): warning C4091: 'typedef ': ignored on left of 'Row' when no variable is declared
-  (compiling source file 'main.cpp')
-  
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Types.h(53,2): warning C4091: 'typedef ': ignored on left of 'Pattern' when no variable is declared
-  (compiling source file 'main.cpp')
-  
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Types.h(58,2): warning C4091: 'typedef ': ignored on left of 'Order' when no variable is declared
-  (compiling source file 'main.cpp')
-  
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Types.h(62,2): warning C4091: 'typedef ': ignored on left of 'Channel' when no variable is declared
-  (compiling source file 'main.cpp')
-  
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Types.h(71,2): warning C4091: 'typedef ': ignored on left of 'Subtune' when no variable is declared
-  (compiling source file 'main.cpp')
-  
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Types.h(77,2): warning C4091: 'typedef ': ignored on left of 'Module' when no variable is declared
-  (compiling source file 'main.cpp')
-  
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Types.h(26,2): warning C4091: 'typedef ': ignored on left of 'MusicHeader' when no variable is declared
-  (compiling source file 'Tracker.cpp')
-  
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Types.h(34,2): warning C4091: 'typedef ': ignored on left of 'SFXHeader' when no variable is declared
-  (compiling source file 'Tracker.cpp')
-  
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Types.h(40,2): warning C4091: 'typedef ': ignored on left of 'FXCol' when no variable is declared
-  (compiling source file 'Tracker.cpp')
-  
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Types.h(48,2): warning C4091: 'typedef ': ignored on left of 'Row' when no variable is declared
-  (compiling source file 'Tracker.cpp')
-  
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Types.h(53,2): warning C4091: 'typedef ': ignored on left of 'Pattern' when no variable is declared
-  (compiling source file 'Tracker.cpp')
-  
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Types.h(58,2): warning C4091: 'typedef ': ignored on left of 'Order' when no variable is declared
-  (compiling source file 'Tracker.cpp')
-  
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Types.h(62,2): warning C4091: 'typedef ': ignored on left of 'Channel' when no variable is declared
-  (compiling source file 'Tracker.cpp')
-  
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Types.h(71,2): warning C4091: 'typedef ': ignored on left of 'Subtune' when no variable is declared
-  (compiling source file 'Tracker.cpp')
-  
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Types.h(77,2): warning C4091: 'typedef ': ignored on left of 'Module' when no variable is declared
-  (compiling source file 'Tracker.cpp')
-  
-  Generating Code...
+﻿  System.cpp
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\System.cpp(85,110): warning C4390: ';': empty controlled statement found; is this the intent?
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\System.cpp(87,105): warning C4390: ';': empty controlled statement found; is this the intent?
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\System.cpp(89,104): warning C4390: ';': empty controlled statement found; is this the intent?
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\System.cpp(93,122): warning C4390: ';': empty controlled statement found; is this the intent?
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\System.cpp(95,121): warning C4390: ';': empty controlled statement found; is this the intent?
   CrispyTrackerDeluxe.vcxproj -> C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\x64\Debug\CrispyTrackerDeluxe.exe

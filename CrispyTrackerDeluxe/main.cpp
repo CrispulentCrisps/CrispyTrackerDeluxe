@@ -2,9 +2,13 @@
 
 System sys;
 
-int main() 
+int main()
 {
+	sys.Init();
+
 	sys.Run();
+	
+	sys.Exit();
 
 	return 0;
 }
