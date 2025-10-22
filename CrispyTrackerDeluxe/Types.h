@@ -4,21 +4,43 @@
 
 #include <vector>
 #include <string>
+#include <map>
 
 #include "sndfile.h"
 #include "SDL3/SDL.h"
 #include "imgui.h"
 #include "backends/imgui_impl_sdl3.h"
 #include "backends/imgui_impl_sdlrenderer3.h"
+#include "snes_spc/SNES_SPC.h"
+#include "snes_spc/SPC_FILTER.h"
+
+typedef unsigned char u8;
+typedef unsigned short u16;
+typedef unsigned long u32;
+typedef signed long s32;
+
+typedef s32 AudioFormat;
 
 #define WINDOW_WIDTH		1920
 #define WINDOW_HEIGHT		1080
+
+#define DRIVER_START		0x0200
+#define DRIVER_LOAD_SIZE	(0x0A00-0x0200)
+#define DRIVER_DIR_TABLE	0x0C00
+
+#define DRIVER_INST_PTR		0x01EC	//Memory location for driver to point to instrument table
+#define DRIVER_SFX_PTR		0x01EE	//memory location for SFX list pointer
+
+#define SDL_AUDIO_FORMAT	SDL_AUDIO_S32LE
+#define AUDIO_CHANNELS		2
+#define AUDIO_RATE			48000
 
 #define MAX_ROW				256
 #define MAX_ORD				256
 #define MAX_PATTERNS		256
 #define MAX_SUB				256
 #define MAX_FX_COL			2
+#define MAX_INPUT_NOTE		16
 
 #define MAX_NOTE			128
 #define MAX_INST			256
@@ -35,13 +57,10 @@
 #define ROW_NULL_IDENT		".."
 #define ROW_NOTE_NULL		"---"
 #define ROW_ITEM_LEN		(3 + (MAX_FX_COL * 2))
+
 #define OCTAVE				12
 
 #define TABLE_SETTINGS		(ImGuiTableFlags_SizingStretchSame)
-
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned long u32;
 
 //Header file for output music tracks
 typedef struct {
@@ -66,6 +85,14 @@ enum DriverInstFlags {
 	DIF_NOISE =		0x02,
 	DIF_PITCHMOD =	0x04,
 };
+
+enum OrderAddMode
+{
+	ORD_NEW,		//Creates a unique blank set of patterns
+	ORD_COPY,		//Copies the selected order to the last point of the list
+	ORD_COPYNEW,	//Adds an order with unique patterns, copied from a previous one
+};
+
 //Internal instrument definition
 typedef struct {
 	u8 src;
@@ -77,8 +104,8 @@ typedef struct {
 
 //Cursor for moving around tracker
 typedef struct {
-	int ChX;
-	int ColX;
+	int ChX;						//Channel position
+	int ColX;						//Column within channel
 	int ChY;
 } Cursor;
 
@@ -112,7 +139,7 @@ typedef struct {
 } Channel;
 
 typedef struct {
-	std::vector<u32> data;
+	std::vector<AudioFormat> data;
 	std::string name;
 	int LoopStart;
 	int LoopEnd;
@@ -155,7 +182,3 @@ typedef struct {
 	std::vector<Instrument> inst;	//Instrument list
 	std::vector<Sample> samples;	//Sample list
 } Module;
-
-//Clock functionality
-extern uint64_t OldTime;
-extern uint64_t NewTime;

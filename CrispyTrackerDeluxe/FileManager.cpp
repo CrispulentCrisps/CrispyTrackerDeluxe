@@ -90,12 +90,14 @@ Sample FileManager::ReadSample(bool* loadsucceed)
             samplebuffer[x / info.channels] = finalval;
         }
 
+        /*
         for (int x = 0; x < count; x++)
         {
             samplebuffer[x] ^= 0x80000000;
 
             newsample.data.push_back(samplebuffer[x]);
         }
+        */
     }
     int filenamestart = path.size();
     std::string filename;
@@ -105,7 +107,7 @@ Sample FileManager::ReadSample(bool* loadsucceed)
         filenamestart--;
     }
 
-    newsample.name.assign(&path[filenamestart]);
+    newsample.name.assign(&path[filenamestart+1]);
 
     sf_close(infile);
     *loadsucceed = true;

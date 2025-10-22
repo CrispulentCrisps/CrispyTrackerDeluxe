@@ -536,7 +536,7 @@ C0:2090 TuneDataEnd
 0003 b573a786 cobalt-vars.asm
 
 [rom checksum]
-a8353b81
+885ec3ad
 
 [addr-to-line mapping]
 00:8000 0000:0000000b

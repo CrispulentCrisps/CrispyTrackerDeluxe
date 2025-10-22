@@ -11,10 +11,11 @@ uint64_t DeltaTime = 1;
 void System::Init()
 {
 	tracker.Init();
+	emu.InitEmu();
 	InitVideo();
+	InitAudio();
 	IsRunning = true;
 }
-
 void System::InitVideo()
 {
 	SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
@@ -28,6 +29,28 @@ void System::InitVideo()
 	ImGui::StyleColorsClassic();
 }
 
+void SDL_AudioCallback(void* userdata, SDL_AudioStream* stream, int additional_amount, int total_amount) 
+{
+	System* sys = (System*)userdata;
+	AudioFormat* buf = sys->emu.RunEmu(additional_amount / (sizeof(AudioFormat) * AUDIO_CHANNELS));
+	/*
+	for (int x = 0; x < additional_amount / (float)sizeof(AUDIO_FORMAT); x += 2)
+	{
+		buf[x] = x * 0xFFFFFF;
+		buf[x + 1] = x * 0xFFFFFF;
+	}
+	*/
+	
+	SDL_PutAudioStreamData(stream, buf, additional_amount);
+	free(buf);
+}
+
+void System::InitAudio()
+{
+	stream = SDL_OpenAudioDeviceStream(SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK, &specs, SDL_AudioCallback, this);
+	SDL_ResumeAudioStreamDevice(stream);
+}
+
 void System::Run()
 {
 	while (IsRunning)
@@ -35,7 +58,7 @@ void System::Run()
 		ImGui_ImplSDLRenderer3_NewFrame();
 		ImGui_ImplSDL3_NewFrame();
 		ImGui::NewFrame();
-		SDL_Event sdlevent;
+		keysprev = keyscur;
 		while (SDL_PollEvent(&sdlevent))
 		{
 			ImGui_ImplSDL3_ProcessEvent(&sdlevent);
@@ -44,10 +67,27 @@ void System::Run()
 				IsRunning = false;
 				break;
 			}
+			if (sdlevent.type == SDL_EVENT_KEY_DOWN)
+			{
+				keyscur[sdlevent.key.key] = true;
+			}
+			else if (sdlevent.type == SDL_EVENT_KEY_UP)
+			{
+				keyscur[sdlevent.key.key] = false;
+			}
 		}
+
+		if (GetKey(SDLK_LEFT)) { tracker.MoveCursor(-1, 0); }
+		else if (GetKey(SDLK_RIGHT)) { tracker.MoveCursor(1, 0); }
+		if (GetKey(SDLK_UP)) { tracker.MoveCursor(0, -1); }
+		else if (GetKey(SDLK_DOWN)) { tracker.MoveCursor(0, 1); }
+		
+		CheckForNoteInput();
+		
 		OldTime = SDL_GetPerformanceCounter();
 		SDL_RenderClear(rend);
 		tracker.Run();
+		UpdateAudio();
 		Draw();
 		ImGui::Render();
 		ImGui_ImplSDLRenderer3_RenderDrawData(ImGui::GetDrawData(), rend);
@@ -56,11 +96,39 @@ void System::Run()
 	}
 }
 
+void System::UpdateAudio()
+{
+
+}
+
+void System::CheckForNoteInput()
+{
+	if (tracker.GetCursor()->ColX == 0)			//Only consider note input if the cursor is in the note column
+	{
+		for (int x = 0; x < MAX_INPUT_NOTE; x++)
+		{
+			if (GetKey(LowNoteInput[x]))
+			{
+				tracker.WriteNote(x, Octave);
+				tracker.MoveCursor(0, Step);
+				return;
+			}
+			else if (GetKey(HighNoteInput[x]))
+			{
+				tracker.WriteNote(x, Octave + 1);
+				tracker.MoveCursor(0, Step);
+				return;
+			}
+		}
+	}
+}
+
 void System::Draw()
 {
 	DrawChannels();
 	DrawInstrumentList();
 	DrawSampleList();
+	DrawOrders();
 	if (InstEditorOpen) DrawInstrumentEditor();
 }
 
@@ -115,13 +183,19 @@ void System::DrawInstrumentList()
 			if (ImGui::Selectable(name.c_str(), tracker.GetSelectedInst() == x)) {
 				tracker.SetSelectedInst(x);
 			}
+			//On double click open the instrument editor
+			if (ImGui::IsItemHovered() && ImGui::IsMouseDoubleClicked(0))
+			{
+				// Do stuff on Selectable() double click.                                                                                                                                                                                                                           
+				InstEditorOpen = true;
+			}
 		}
 		if (ImGui::Selectable("Add new instrument +", false))
 		{
 			char buf[8];
 			std::string newname = "Instrument: ";
 			newname.append(itoa(tracker.GetInstLen(), buf, 16));
-			tracker.AddNewInst(newname);
+			tracker.AddInst(newname);
 		}
 		ImGui::End();
 	}
@@ -187,7 +261,11 @@ void System::DrawSampleList()
 		{
 			bool issuccessful = false;
 			Sample newsample = filemanager.ReadSample(&issuccessful);
-			if (issuccessful) { tracker.AddSample(newsample); }
+			if (issuccessful) 
+			{
+				tracker.AddSample(newsample);
+				emu.Sample2BRR(tracker.GetSampleList());
+			}
 		}
 		ImGui::End();
 	}
@@ -196,6 +274,47 @@ void System::DrawSampleList()
 void System::DrawSampleEditor()
 {
 
+}
+
+void System::DrawOrders()
+{
+	Order* ord = tracker.GetCurrentOrder();
+	if (ImGui::Begin("Orders"))
+	{
+		int id = 0;
+		if (ImGui::BeginTable("##OrderView", CHANNEL_COUNT+1, TABLE_SETTINGS))
+		{
+			ImGui::TableNextColumn();
+			for (int y = 0; y < tracker.GetOrderLen(); y++) 
+			{
+				if (ImGui::Selectable(Index2String(y).c_str(), tracker.GetSelectedOrder() == y))
+				{
+					tracker.SetCurrentOrder(y);
+				}
+			}
+
+			ImGui::TableNextColumn();
+			for (int z = 0; z < CHANNEL_COUNT; z++)
+			{
+				for (int y = 0; y < tracker.GetOrderLen(); y++)
+				{
+					if (ImGui::Selectable(GetHexUnique(tracker.GetCurrentOrderPatternIndex(z, y), id).c_str(), tracker.GetSelectedOrder() == y))
+					{
+
+					}
+				}
+				ImGui::TableNextColumn();
+			}
+			
+			ImGui::EndTable();
+		}
+
+		if (ImGui::Selectable("Add new order +", false))
+		{
+			tracker.AddOrder(ORD_NEW);
+		}
+		ImGui::End();
+	}
 }
 
 std::string System::GetNoteName(int val)
@@ -223,9 +342,13 @@ std::string System::GetNoteNameUnique(int val, int& id)
 
 std::string System::GetHex(int val)
 {
-	char buf[2];
+	char buf[32];
 	if (val == ROW_NULL) { return ROW_NULL_IDENT; }
-	else { return itoa(val, buf, 16); }
+	else 
+	{
+		sprintf_s(buf, "%02X", val);
+		return buf;
+	}
 }
 
 std::string System::GetHexUnique(int val, int& id)
@@ -255,8 +378,22 @@ std::string System::Index2String(int ind)
 	return out;
 }
 
+//
+// Returns if a key is being pressed
+// held is for if we want to continually poll this key input
+//
+bool System::GetKey(SDL_Keycode key)
+{
+	if (keyscur[key] && keyscur[key] != keysprev[key])
+	{
+		return true;
+	}
+	return false;
+}
+
 void System::Exit()
 {
+	SDL_DestroyAudioStream(stream);
 	ImGui_ImplSDLRenderer3_Shutdown();
 	ImGui_ImplSDL3_Shutdown();
 	ImGui::DestroyContext();

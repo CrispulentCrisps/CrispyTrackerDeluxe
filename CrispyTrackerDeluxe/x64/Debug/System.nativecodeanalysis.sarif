@@ -1,0 +1,675 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.38.33135.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/system.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "a4e845853e5f912938bd980b1e8ce63a00081e39ef04b599f2e9540ec54b2c60"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/system.h"
+          },
+          "hashes": {
+            "sha-256": "385b30a5adff52b24ca9dfa42867182a2bff6867f62a51a09e8786d8edd5fbae"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/filemanager.h"
+          },
+          "hashes": {
+            "sha-256": "6f51b8fd72bf943ff464d00a627639fb4c9f87632cbb33a642c3bf335f04ba1f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/types.h"
+          },
+          "hashes": {
+            "sha-256": "4162aa3b554239e5f65951f02fb39a04ae54c2618f2718e5911eb11dca711fe9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/libsndfile-1.2.2-win64/include/sndfile.h"
+          },
+          "hashes": {
+            "sha-256": "5cd6a865d05c0e78dbfe3fe3ac67191c875dda1727e5dc0c1021978767b49f9c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl.h"
+          },
+          "hashes": {
+            "sha-256": "c6b6861410d6a268c81bf3b48cb13fe439a27bb4ba9b7824f1c26b779b536e1d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_stdinc.h"
+          },
+          "hashes": {
+            "sha-256": "e9176755a32346b2c9ec60c350b8dd98c1561b46e12539e9bb027a0e27932dbf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_platform_defines.h"
+          },
+          "hashes": {
+            "sha-256": "26606666d530a777cb40eb27c46d882278539d9649b1ad3a6926c24c12f85bcd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_begin_code.h"
+          },
+          "hashes": {
+            "sha-256": "7f193613b1e37af9274aa26e33a81d4d5764ef6f682aabba7468882a59e028e2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_close_code.h"
+          },
+          "hashes": {
+            "sha-256": "ce3ca73e7fd5293310fd155692c58b5e82e516f1a8267f84d0af572c8398e3e9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_assert.h"
+          },
+          "hashes": {
+            "sha-256": "2ed21bb3ed11d1dd8c343400ae8da49c4e5ac166280b4be2cfdc99768b9d93c0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_asyncio.h"
+          },
+          "hashes": {
+            "sha-256": "e9e4074f1b35bda21f3e1d97259f03c65e2dc6da9c5f218d29890475c9306da6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_atomic.h"
+          },
+          "hashes": {
+            "sha-256": "081ff913ad637a16b94ca5870fba7d9ed710e8e8e20b1b866feac2df19a58f17"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_audio.h"
+          },
+          "hashes": {
+            "sha-256": "9df2fe57f4ab31ae8ee1c8f117098e994fd3983ea0e48abd014541b566410fcd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_endian.h"
+          },
+          "hashes": {
+            "sha-256": "8f22c489c5073a3034e0a1c4e05274680d485f4cc2d16d7c211a60c2731380b2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_error.h"
+          },
+          "hashes": {
+            "sha-256": "7d294ba3e994b89a42bc6346e7e59bff82fbce2d050f7cdb189d8f45f31795f2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_mutex.h"
+          },
+          "hashes": {
+            "sha-256": "2b4980fc376b179f9f01892deaf679a8da2771efb301e705d1ffb66b2e9e7225"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_thread.h"
+          },
+          "hashes": {
+            "sha-256": "f8b9761ad77090828102d49ac7f01962e4bc918b6b19cfa1c3e9ed607aa19a21"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_properties.h"
+          },
+          "hashes": {
+            "sha-256": "14c48c9c47da233be6b83fe8e4204beab85dea95c6ba1ae48e6490d45ea64edf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_iostream.h"
+          },
+          "hashes": {
+            "sha-256": "db06713225006e84aa92662018e6e1f5d7a6192e2e5c67ad18839d7733a80715"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_bits.h"
+          },
+          "hashes": {
+            "sha-256": "1fcf06b747c667e53bb6cf9d017d5abc5a29ad883c05eedfcfb021c571b61592"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_blendmode.h"
+          },
+          "hashes": {
+            "sha-256": "8406acc439c395ac49ea779c2d382a12da97832531398f68e83b6d680cc03fc5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_camera.h"
+          },
+          "hashes": {
+            "sha-256": "835839506cd2ffa6c0f4c83031c2f8afb0c8a8b59d894c118d4d415349f91571"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_pixels.h"
+          },
+          "hashes": {
+            "sha-256": "78249e55f5eb05bf6510e5de53242eb6c938cb2e7af66676b2c64ec10217ee9a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_surface.h"
+          },
+          "hashes": {
+            "sha-256": "97a4c47b926d001cbd56c1f703861099ff7b27e11c9a2f76519e7b3b2e1b8189"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_rect.h"
+          },
+          "hashes": {
+            "sha-256": "8de19c9341581c7a2916f99bd8553994a2c558c21bd34ea372a012539ddbfb76"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_clipboard.h"
+          },
+          "hashes": {
+            "sha-256": "7c20b171893ef6020a81309bb0ab65487624513a043252a6604357a55c1b9201"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_cpuinfo.h"
+          },
+          "hashes": {
+            "sha-256": "c03363b9c6c93f751b5b253d636208baa9d6658c6926802b35169736b96f1aef"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_dialog.h"
+          },
+          "hashes": {
+            "sha-256": "7d674d748369f62e3ee79ce9b92e67a890413afb651a58c05f8c6d7ba0ff4dee"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_video.h"
+          },
+          "hashes": {
+            "sha-256": "3a9acf9c1f494b476aba5a515c893cfd55b136c6e18e82f4e570d01718139eb4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_events.h"
+          },
+          "hashes": {
+            "sha-256": "8a586e47c465d2d9091a62adb331b84aef3c2114db2ed3b74a0a4c69fa6db9ab"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_gamepad.h"
+          },
+          "hashes": {
+            "sha-256": "2fc1db9f76cd78ca7a7b53df4a717b8f0fe70476d3f111f8a924cc90cd1704a7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_guid.h"
+          },
+          "hashes": {
+            "sha-256": "0629f5b5f3fdd6bfc252d7beab1af214e1214574cc51e72871e2c0f9c308e69a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_joystick.h"
+          },
+          "hashes": {
+            "sha-256": "af468fcbca5a13b3b9e4f881de4bb897ef9d6484e07dbda604b6246573f383b5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_power.h"
+          },
+          "hashes": {
+            "sha-256": "0abc02f096234518b87527e917ebb3fef1629fccf94a595c4953afd3f869e8ff"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_sensor.h"
+          },
+          "hashes": {
+            "sha-256": "0629da20ce5c42c4cf9b12e3c35ba4caaeb0fb73841bc2a246fcefe260330c43"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_keyboard.h"
+          },
+          "hashes": {
+            "sha-256": "40c0048a237e7fd49468f16d7336f80c5ae5e3888c3cd1d7bde43159f60682ad"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_keycode.h"
+          },
+          "hashes": {
+            "sha-256": "0861f1ec14bbfd2eddf2a3135cdd4f55ccaafa81a283e5740236ef4d10e8e700"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_scancode.h"
+          },
+          "hashes": {
+            "sha-256": "055b04c228b86451e97c972614a76cb0785a8d869df70ba8cef98b0a96235418"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_mouse.h"
+          },
+          "hashes": {
+            "sha-256": "325398956b2f49874f44e74244adf304738c478b67a1189248b5f6b57ea393bd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_pen.h"
+          },
+          "hashes": {
+            "sha-256": "90c55ee2b222942d03d9b0815da42e4dbc8971f62e141e8d176cd8d063076527"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_touch.h"
+          },
+          "hashes": {
+            "sha-256": "2248db7eb31d850dc6f7784097acb250c1bafe6508b3e91550478ffffd465261"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_filesystem.h"
+          },
+          "hashes": {
+            "sha-256": "6d1e800ff2b20de2d0416f7c6817dd6f11b3b9fc3bfb80be5834e3069466cbd2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_gpu.h"
+          },
+          "hashes": {
+            "sha-256": "30706ed2427c93a5c217fe68a707c64cf97ee119826edcd75c804746b9ee3956"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_haptic.h"
+          },
+          "hashes": {
+            "sha-256": "a8bba38a319298e6e2b110041c0fb7b144b6fec89c06ee428854542db73db70f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_hidapi.h"
+          },
+          "hashes": {
+            "sha-256": "052fd434781ea148143f4644ed6af512589c4a432d31c5d9472d2f394d4eb16b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_hints.h"
+          },
+          "hashes": {
+            "sha-256": "27df6d885b4267185e2084e935151fb655be57ca56ee186f7f866c5b990de52b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_init.h"
+          },
+          "hashes": {
+            "sha-256": "43fea08b512cbaaa331b21b1f885ba98c88c8b3dd423bce3ea46f0c0d0e3536c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_loadso.h"
+          },
+          "hashes": {
+            "sha-256": "2ee703a4dbe54fea84980134c26d21cb87c30df4b7afdfa1a3cc6ca6ef64e09e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_locale.h"
+          },
+          "hashes": {
+            "sha-256": "b34500fc0c94685211fd4c6e15b0272f3ba5dfb50060407c3901c6c9e983985b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_log.h"
+          },
+          "hashes": {
+            "sha-256": "b8f7707c73286f1631293b7766ee684ab686b8c5d00a5ba45a4f53cc738fbad8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_messagebox.h"
+          },
+          "hashes": {
+            "sha-256": "7fd26a4a17ab80cec0a58c47409a74accc27440d935b79b508e11098982bc0c8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_metal.h"
+          },
+          "hashes": {
+            "sha-256": "ec5b39fa253ba8b1cd87c5e40ef6de36dc32a588f20d5078b011280124b08240"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_misc.h"
+          },
+          "hashes": {
+            "sha-256": "ce53806638666ecde452ae3f8bce9a653c8539fe78b8c6fd9585bd4888ec93e0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_platform.h"
+          },
+          "hashes": {
+            "sha-256": "ac9cf309bddc0e7555fbe1d425837bad13ab6887a00a2941be8d4fcdf4b3111a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_process.h"
+          },
+          "hashes": {
+            "sha-256": "a270b5070d67d561ed927833916449a948db0316fd4276b30cb5a37cd9f91d04"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_render.h"
+          },
+          "hashes": {
+            "sha-256": "e32fcbc32e80d06bd69a3d36855bdac412b2d00195b83a5181458ced4cd317bf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_storage.h"
+          },
+          "hashes": {
+            "sha-256": "773c66839fb16a004d632ab0f7d34fb7a3b4371106b5ffe292255a15f01ddd9e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_system.h"
+          },
+          "hashes": {
+            "sha-256": "8febdcffaa9afed5b09cd56ec45b65ffe65ab230e91622888ff496b3d5af9a80"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_time.h"
+          },
+          "hashes": {
+            "sha-256": "dae323ae82b6a4942a4e9418477ed4f284eeac4b815966af2b8ca934842b8e22"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_timer.h"
+          },
+          "hashes": {
+            "sha-256": "e619324d446432abb3cc2f5218ac089b2345c00e454ec52b5fc723f137e4bf3c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_tray.h"
+          },
+          "hashes": {
+            "sha-256": "65d74cb1727af7cb9029cbdad9cd6d0a7b9fe782efef05fec89fff267ca45036"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_version.h"
+          },
+          "hashes": {
+            "sha-256": "fca9724f2ae1995414c76bf52986a5550bed26a7356ebe9c64e830938428af83"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/sdl3-3.2.24/include/sdl3/sdl_oldnames.h"
+          },
+          "hashes": {
+            "sha-256": "a461ac4c49c64b5a8ddfc9dfad0a282b55ff08ce29e84858c07b92ad40ae6421"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/imgui-1.92.3/imgui.h"
+          },
+          "hashes": {
+            "sha-256": "0e1a5f357f3c6b9d87e684627971df14057b76e341bfd16730d5ad370072e539"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/imgui-1.92.3/imconfig.h"
+          },
+          "hashes": {
+            "sha-256": "a92534d918030048328fffcf0a50236b8c05f79558355b37e34b664e13c71091"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/imgui-1.92.3/backends/imgui_impl_sdl3.h"
+          },
+          "hashes": {
+            "sha-256": "a8cbd19af65e19b94c3f447fc2d5de79056cc9c0f646b84baf1054d88692bddf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/imgui-1.92.3/backends/imgui_impl_sdlrenderer3.h"
+          },
+          "hashes": {
+            "sha-256": "27fd0d1c8a4fdd4359f8e7d4ea48364fab85b3192581991f05e9297f67a20311"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/tracker.h"
+          },
+          "hashes": {
+            "sha-256": "c7a4d9ae2013f6420bd5308166697278e0192e07665bd9671e59bff4cad85559"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/imgui-1.92.3/misc/single_file/imgui_single_file.h"
+          },
+          "hashes": {
+            "sha-256": "a42f63e51656ee69a9dcc47aec31c0ddb518b593e3455dfe3e9a1b8cf4c71197"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/imgui-1.92.3/imgui.cpp"
+          },
+          "hashes": {
+            "sha-256": "61d9635868d468f7580a6f34be44893641e52f34e2ef801d5b17f37f91c4deaa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/imgui-1.92.3/imgui_internal.h"
+          },
+          "hashes": {
+            "sha-256": "9656847a87255a0c43ebde711d01a3e14527859e24c5ca434709ccc4d0f0cf89"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/imgui-1.92.3/imgui_demo.cpp"
+          },
+          "hashes": {
+            "sha-256": "be6fc5c082b4335cbe2598fd295765f3293fe84a41c3b7b2601acb6665795a40"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/imgui-1.92.3/imgui_draw.cpp"
+          },
+          "hashes": {
+            "sha-256": "34700eb347dbe05bf9fa8a367b9ca8d89ab282a93ed3a8c5ae2e3a58c9c6a122"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/imgui-1.92.3/imstb_rectpack.h"
+          },
+          "hashes": {
+            "sha-256": "2efa3d5f7d003c19743b15155dad9f46d9f9fc783a18893d703b431d3c990972"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/imgui-1.92.3/imstb_truetype.h"
+          },
+          "hashes": {
+            "sha-256": "88f0a25e27f5eefd6ec50c42fc5fe3026aa8170603efa08aa18d622db8660923"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/imgui-1.92.3/imgui_tables.cpp"
+          },
+          "hashes": {
+            "sha-256": "bfe2a6a3c40e04d706aca023573de856f183e3ac506b6fcc45185829d8372967"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/imgui-1.92.3/imgui_widgets.cpp"
+          },
+          "hashes": {
+            "sha-256": "cefa9205ee82a3e8724cfe14d33aa1df273ea33a97390fb5f5fef3c1e6d627d0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/imgui-1.92.3/imstb_textedit.h"
+          },
+          "hashes": {
+            "sha-256": "61942af90f12b49e1f4db3ff3bde842937883caba0b340172927b5157b3fbdc6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/imgui-1.92.3/backends/imgui_impl_sdl3.cpp"
+          },
+          "hashes": {
+            "sha-256": "f02aac2f09ad691d6a8ebb319389e8e0ed20bc8326eb5f50d56ef507ee4801ba"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/david/documents/c_games/crispytrackerdeluxe/crispytrackerdeluxe/lib/debug/imgui-1.92.3/backends/imgui_impl_sdlrenderer3.cpp"
+          },
+          "hashes": {
+            "sha-256": "41b0f0efae156999ed379fcda4979089c88a2f85a6c28235f8d16601d864a09a"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -44,7 +44,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LibraryPath>C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\lib\debug\SDL3-3.2.24\lib\x64;C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\lib\debug\libsndfile-1.2.2-win64\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(ProjectDir)lib\debug\SDL3-3.2.24\lib\x64;$(ProjectDir)lib\debug\libsndfile-1.2.2-win64\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -52,7 +52,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\lib\debug\SDL3-3.2.24\include;C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\lib\debug\imgui-1.92.3;C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\lib\debug\libsndfile-1.2.2-win64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)lib\debug\SDL3-3.2.24\include;$(ProjectDir)lib\debug\imgui-1.92.3;$(ProjectDir)lib\debug\libsndfile-1.2.2-win64\include;$(ProjectDir)emu\snes_spc-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -77,13 +77,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EmulatorHandler.cpp" />
+    <ClCompile Include="emu\snes_spc-master\snes_spc\dsp.cpp" />
+    <ClCompile Include="emu\snes_spc-master\snes_spc\SNES_SPC.cpp" />
+    <ClCompile Include="emu\snes_spc-master\snes_spc\SNES_SPC_misc.cpp" />
+    <ClCompile Include="emu\snes_spc-master\snes_spc\SNES_SPC_state.cpp" />
+    <ClCompile Include="emu\snes_spc-master\snes_spc\spc.cpp" />
+    <ClCompile Include="emu\snes_spc-master\snes_spc\SPC_DSP.cpp" />
+    <ClCompile Include="emu\snes_spc-master\snes_spc\SPC_Filter.cpp" />
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="System.cpp" />
     <ClCompile Include="Tracker.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EmulatorHandler.h" />
+    <ClInclude Include="emu\snes_spc-master\snes_spc\blargg_common.h" />
+    <ClInclude Include="emu\snes_spc-master\snes_spc\blargg_config.h" />
+    <ClInclude Include="emu\snes_spc-master\snes_spc\blargg_endian.h" />
+    <ClInclude Include="emu\snes_spc-master\snes_spc\blargg_source.h" />
+    <ClInclude Include="emu\snes_spc-master\snes_spc\dsp.h" />
+    <ClInclude Include="emu\snes_spc-master\snes_spc\SNES_SPC.h" />
+    <ClInclude Include="emu\snes_spc-master\snes_spc\spc.h" />
+    <ClInclude Include="emu\snes_spc-master\snes_spc\SPC_CPU.h" />
+    <ClInclude Include="emu\snes_spc-master\snes_spc\SPC_DSP.h" />
+    <ClInclude Include="emu\snes_spc-master\snes_spc\SPC_Filter.h" />
     <ClInclude Include="FileManager.h" />
+    <ClInclude Include="resources.h" />
     <ClInclude Include="System.h" />
     <ClInclude Include="Tracker.h" />
     <ClInclude Include="Types.h" />

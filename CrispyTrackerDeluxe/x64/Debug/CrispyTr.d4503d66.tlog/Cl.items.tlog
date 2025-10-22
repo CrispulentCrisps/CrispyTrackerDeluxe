@@ -1,3 +1,11 @@
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\EmulatorHandler.cpp;C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\x64\Debug\EmulatorHandler.obj
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\emu\snes_spc-master\snes_spc\dsp.cpp;C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\x64\Debug\dsp.obj
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\emu\snes_spc-master\snes_spc\SNES_SPC.cpp;C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\x64\Debug\SNES_SPC.obj
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\emu\snes_spc-master\snes_spc\SNES_SPC_misc.cpp;C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\x64\Debug\SNES_SPC_misc.obj
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\emu\snes_spc-master\snes_spc\SNES_SPC_state.cpp;C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\x64\Debug\SNES_SPC_state.obj
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\emu\snes_spc-master\snes_spc\spc.cpp;C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\x64\Debug\spc.obj
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\emu\snes_spc-master\snes_spc\SPC_DSP.cpp;C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\x64\Debug\SPC_DSP.obj
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\emu\snes_spc-master\snes_spc\SPC_Filter.cpp;C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\x64\Debug\SPC_Filter.obj
 C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\FileManager.cpp;C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\x64\Debug\FileManager.obj
 C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\main.cpp;C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\x64\Debug\main.obj
 C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\System.cpp;C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\x64\Debug\System.obj

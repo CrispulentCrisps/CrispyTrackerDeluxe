@@ -1,7 +1,39 @@
-﻿  System.cpp
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\System.cpp(85,110): warning C4390: ';': empty controlled statement found; is this the intent?
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\System.cpp(87,105): warning C4390: ';': empty controlled statement found; is this the intent?
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\System.cpp(89,104): warning C4390: ';': empty controlled statement found; is this the intent?
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\System.cpp(93,122): warning C4390: ';': empty controlled statement found; is this the intent?
-C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\System.cpp(95,121): warning C4390: ';': empty controlled statement found; is this the intent?
+﻿  EmulatorHandler.cpp
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\emu\snes_spc-master\snes_spc\SPC_DSP.h(238,57): warning C4244: 'return': conversion from '__int64' to 'int', possible loss of data
+  (compiling source file 'EmulatorHandler.cpp')
+  
+  FileManager.cpp
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\emu\snes_spc-master\snes_spc\SPC_DSP.h(238,57): warning C4244: 'return': conversion from '__int64' to 'int', possible loss of data
+  (compiling source file 'FileManager.cpp')
+  
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\FileManager.cpp(81,29): warning C4244: '=': conversion from 'sf_count_t' to 'int', possible loss of data
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\FileManager.cpp(102,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  System.cpp
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\emu\snes_spc-master\snes_spc\SPC_DSP.h(238,57): warning C4244: 'return': conversion from '__int64' to 'int', possible loss of data
+  (compiling source file 'System.cpp')
+  
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\System.cpp(153,110): warning C4390: ';': empty controlled statement found; is this the intent?
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\System.cpp(155,105): warning C4390: ';': empty controlled statement found; is this the intent?
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\System.cpp(157,104): warning C4390: ';': empty controlled statement found; is this the intent?
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\System.cpp(161,122): warning C4390: ';': empty controlled statement found; is this the intent?
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\System.cpp(163,121): warning C4390: ';': empty controlled statement found; is this the intent?
+  Tracker.cpp
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\emu\snes_spc-master\snes_spc\SPC_DSP.h(238,57): warning C4244: 'return': conversion from '__int64' to 'int', possible loss of data
+  (compiling source file 'Tracker.cpp')
+  
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Tracker.cpp(63,31): warning C4244: 'argument': conversion from 'unsigned __int64' to 'double', possible loss of data
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Tracker.cpp(63,12): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Tracker.cpp(142,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Tracker.cpp(199,25): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Tracker.cpp(204,42): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Tracker.cpp(219,22): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Tracker.cpp(261,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Tracker.cpp(262,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Tracker.cpp(268,40): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  main.cpp
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\emu\snes_spc-master\snes_spc\SPC_DSP.h(238,57): warning C4244: 'return': conversion from '__int64' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+  Generating Code...
+C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\Tracker.cpp(153): warning C4172: returning address of local variable or temporary: ord
   CrispyTrackerDeluxe.vcxproj -> C:\Users\david\Documents\C_Games\CrispyTrackerDeluxe\CrispyTrackerDeluxe\x64\Debug\CrispyTrackerDeluxe.exe

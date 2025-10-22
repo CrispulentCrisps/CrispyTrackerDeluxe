@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="SPC">
+      <UniqueIdentifier>{15ca7e44-b5a1-400f-bdf2-4758bc605964}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -27,6 +30,30 @@
     <ClCompile Include="FileManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EmulatorHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="emu\snes_spc-master\snes_spc\dsp.cpp">
+      <Filter>SPC</Filter>
+    </ClCompile>
+    <ClCompile Include="emu\snes_spc-master\snes_spc\SNES_SPC.cpp">
+      <Filter>SPC</Filter>
+    </ClCompile>
+    <ClCompile Include="emu\snes_spc-master\snes_spc\SNES_SPC_misc.cpp">
+      <Filter>SPC</Filter>
+    </ClCompile>
+    <ClCompile Include="emu\snes_spc-master\snes_spc\SNES_SPC_state.cpp">
+      <Filter>SPC</Filter>
+    </ClCompile>
+    <ClCompile Include="emu\snes_spc-master\snes_spc\spc.cpp">
+      <Filter>SPC</Filter>
+    </ClCompile>
+    <ClCompile Include="emu\snes_spc-master\snes_spc\SPC_DSP.cpp">
+      <Filter>SPC</Filter>
+    </ClCompile>
+    <ClCompile Include="emu\snes_spc-master\snes_spc\SPC_Filter.cpp">
+      <Filter>SPC</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Types.h">
@@ -40,6 +67,42 @@
     </ClInclude>
     <ClInclude Include="FileManager.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EmulatorHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="emu\snes_spc-master\snes_spc\blargg_common.h">
+      <Filter>SPC</Filter>
+    </ClInclude>
+    <ClInclude Include="emu\snes_spc-master\snes_spc\blargg_config.h">
+      <Filter>SPC</Filter>
+    </ClInclude>
+    <ClInclude Include="emu\snes_spc-master\snes_spc\blargg_endian.h">
+      <Filter>SPC</Filter>
+    </ClInclude>
+    <ClInclude Include="emu\snes_spc-master\snes_spc\blargg_source.h">
+      <Filter>SPC</Filter>
+    </ClInclude>
+    <ClInclude Include="emu\snes_spc-master\snes_spc\dsp.h">
+      <Filter>SPC</Filter>
+    </ClInclude>
+    <ClInclude Include="emu\snes_spc-master\snes_spc\SNES_SPC.h">
+      <Filter>SPC</Filter>
+    </ClInclude>
+    <ClInclude Include="emu\snes_spc-master\snes_spc\spc.h">
+      <Filter>SPC</Filter>
+    </ClInclude>
+    <ClInclude Include="emu\snes_spc-master\snes_spc\SPC_CPU.h">
+      <Filter>SPC</Filter>
+    </ClInclude>
+    <ClInclude Include="emu\snes_spc-master\snes_spc\SPC_DSP.h">
+      <Filter>SPC</Filter>
+    </ClInclude>
+    <ClInclude Include="emu\snes_spc-master\snes_spc\SPC_Filter.h">
+      <Filter>SPC</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -27,27 +27,44 @@ public:
 	
 	//
 	//	Naming convention
-	//		[Current] is a pointer to the currently selected instrument
+	//		[Current] is a pointer to the currently selected item
 	//		[Selected] is a the selected index into the given list
 	//
 	Instrument* GetInstrument(int ind);
 	void SetSelectedInst(int ind);
 	int GetSelectedInst();
-	Instrument* AddNewInst(std::string name);
+	Instrument* AddInst(std::string name);
 
+	std::vector<Sample>& GetSampleList();
 	Sample* GetCurrentSample(int ind);
 	void SetCurrentSample(int ind);
 	int GetSelectedSample();
 	Sample* AddSample(Sample sample);
 
+	Order* GetCurrentOrder();
+	void SetCurrentOrder(int ind);
+	int GetSelectedOrder();
+	Order* AddOrder(OrderAddMode mode);
+	int GetCurrentOrderPatternIndex(int ch, int ordpos);
+		
+	Pattern* AddPattern(OrderAddMode mode);
+
 	Instrument* GetCurrentInstrument();
 	Pattern* GetCurrentPattern(int chindex);
-	Order* GetOrder();
+	Cursor* GetCursor();
 
+	void WriteNote(int val, int octaveoff = 0);
+	void WritePatternVal(int val);
+
+	void MoveCursor(int xoff, int yoff);
+	void CheckCursorBounds();
 	bool IsCursorOver(int x, int finex, int y);
+
 	int GetRowLen();
 	int GetInstLen();
 	int GetSampleLen();
+	int GetOrderLen();
+	int GetPatternLen();
 
 	bool Run();
 };
